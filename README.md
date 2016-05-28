@@ -1,38 +1,37 @@
-Role Name
-=========
+# Ansible Role - Docker for Linux Server
 
-A brief description of the role goes here.
+[![Build Status](https://travis-ci.org/elnebuloso/ansible-role-docker-mysql.svg?branch=master)](https://travis-ci.org/elnebuloso/ansible-role-docker-mysql)
 
-Requirements
-------------
+MySQL Server for Docker.
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+## Requirements
 
-Role Variables
---------------
+  - `docker` should be installed and working (you can use the `elnebuloso.docker` role to install).
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+## Role Variables
 
-Dependencies
-------------
+Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+```
+docker_mysql_name: "mysql"
+docker_mysql_state: "started"
+docker_mysql_version: "5.7"
+docker_mysql_root_password: "welcome"
+docker_mysql_port: "3306"
+```
 
-Example Playbook
-----------------
+## Example Playbook
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+```
+- hosts: localhost
+  roles:
+    - { role: elnebuloso.docker-mysql }
+```
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+##  License
 
-License
--------
+MIT
 
-BSD
+##  Author Information
 
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+This role was created in 2016 by [elnebuloso](https://github.com/elnebuloso/)
