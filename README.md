@@ -1,8 +1,6 @@
-# Ansible Role - Docker for Linux Server
+# Ansible Role - MySQL Server for Docker
 
 [![Build Status](https://travis-ci.org/elnebuloso/ansible-role-docker-mysql.svg?branch=master)](https://travis-ci.org/elnebuloso/ansible-role-docker-mysql)
-
-MySQL Server for Docker.
 
 ## Requirements
 
