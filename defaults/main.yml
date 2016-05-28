@@ -1,0 +1,6 @@
+---
+docker_mysql_name: "mysql"
+docker_mysql_state: "started"
+docker_mysql_version: "5.7"
+docker_mysql_root_password: "welcome"
+docker_mysql_port: "3306"
