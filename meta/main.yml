@@ -16,6 +16,6 @@ galaxy_info:
     - development
     - webserver
     - docker
-    - docker-mysql
+    - mysql
 
 dependencies: []

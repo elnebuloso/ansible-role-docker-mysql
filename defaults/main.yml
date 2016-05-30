@@ -1,6 +1,8 @@
 ---
-docker_mysql_name: "mysql"
 docker_mysql_state: "started"
 docker_mysql_version: "5.7"
-docker_mysql_root_password: "welcome"
+docker_mysql_name: "mysql"
+docker_mysql_volume_base: "/opt/docker"
+docker_mysql_conf_template: "docker-mysql/my.tpl"
 docker_mysql_port: "3306"
+docker_mysql_root_password: "welcome"

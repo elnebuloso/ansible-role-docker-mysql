@@ -1,12 +1,15 @@
 ---
-- name: create volume directories for container
-  file: path=/opt/docker/{{docker_mysql_name}}-{{docker_mysql_version}}/{{item}} state=directory recurse=yes
-  with_items:
-    - data
-    - conf.d
+- name: set docker_mysql_volume
+  set_fact: docker_mysql_volume="{{docker_mysql_volume_base}}/{{docker_mysql_name}}-{{docker_mysql_version}}"
 
-- name: configure mysql over template
-  template: src=my.tpl dest=/opt/docker/{{docker_mysql_name}}-{{docker_mysql_version}}/conf.d/00-provision.cnf
+- name: create volume directory for mysql data
+  file: path={{docker_mysql_volume}}/data state=directory recurse=yes
+
+- name: create volume directory for mysql configuration
+  file: path={{docker_mysql_volume}}/conf.d state=directory recurse=yes
+
+- name: configure mysql over configuration template and directory
+  template: src={{docker_mysql_conf_template}} dest={{docker_mysql_volume}}/conf.d/00-provision.cnf
 
 - name: install container
   docker:
@@ -14,8 +17,8 @@
     image: "mysql:{{docker_mysql_version}}"
     state: "{{docker_mysql_state}}"
     volumes:
-      - "/opt/docker/{{docker_mysql_name}}-{{docker_mysql_version}}/data:/var/lib/mysql"
-      - "/opt/docker/{{docker_mysql_name}}-{{docker_mysql_version}}/conf.d:/etc/mysql/conf.d"
+      - "{{docker_mysql_volume}}/data:/var/lib/mysql"
+      - "{{docker_mysql_volume}}/conf.d:/etc/mysql/conf.d"
     ports:
       - "{{docker_mysql_port}}:3306"
     env:
