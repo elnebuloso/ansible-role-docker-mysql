@@ -1,6 +1,6 @@
 ---
 - name: set docker_mysql_volume
-  set_fact: docker_mysql_volume="{{docker_mysql_volume_base}}/{{docker_mysql_name}}-{{docker_mysql_version}}"
+  set_fact: docker_mysql_volume="{{docker_mysql_container_volume_base}}/{{docker_mysql_container_name}}-{{docker_mysql_version}}"
 
 - name: create volume directory for mysql data
   file: path={{docker_mysql_volume}}/data state=directory recurse=yes
@@ -9,11 +9,11 @@
   file: path={{docker_mysql_volume}}/conf.d state=directory recurse=yes
 
 - name: configure mysql over configuration template and directory
-  template: src={{docker_mysql_conf_template}} dest={{docker_mysql_volume}}/conf.d/00-provision.cnf
+  template: src=docker-mysql/{{docker_mysql_config_template}} dest={{docker_mysql_volume}}/conf.d/00-provision.cnf
 
 - name: install container
   docker:
-    name: "{{docker_mysql_name}}"
+    name: "{{docker_mysql_container_name}}"
     image: "mysql:{{docker_mysql_version}}"
     state: "{{docker_mysql_state}}"
     volumes:
