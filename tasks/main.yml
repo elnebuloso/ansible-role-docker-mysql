@@ -12,7 +12,7 @@
   template: src=docker-mysql/{{docker_mysql_config_template}} dest={{docker_mysql_volume}}/conf.d/00-provision.cnf
 
 - name: install container
-  docker:
+  docker_container:
     name: "{{docker_mysql_container_name}}"
     image: "mysql:{{docker_mysql_version}}"
     state: "{{docker_mysql_state}}"
