@@ -15,7 +15,7 @@ This role requires Ansible 2.0 or higher, and platform requirements are listed i
 ```
 - hosts: localhost
   roles:
-    - { role: elnebuloso.docker-mysql }
+    - role: elnebuloso.docker-mysql
 ```
 
 ## Dependencies
