@@ -14,7 +14,7 @@ Available variables are listed below, along with default values (see `defaults/m
 docker_mysql_version: "5.7"
 docker_mysql_container_name: "mysql"
 docker_mysql_container_volume_base: "/opt/docker"
-docker_mysql_pull: "yes"
+docker_mysql_pull: "no"
 docker_mysql_state: "started"
 docker_mysql_restart_policy: "always"
 docker_mysql_config_template: "config.tpl"

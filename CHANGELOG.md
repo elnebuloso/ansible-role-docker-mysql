@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.5.0] - 2017-07-28
+### Changed
+- docker_mysql_pull: "no"
+
+
 ## [1.4.0] - 2017-07-28
 ### Added
 - docker_mysql_pull: "yes"
