@@ -5,6 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.4.0] - 2017-07-28
+### Added
+- docker_mysql_pull: "yes"
+- docker_mysql_state: "started"
+- docker_mysql_restart_policy: "always"
+
+
 ## [1.3.0]
 ### Changed
 - http://docs.ansible.com/ansible/docker_container_module.html#docker-container

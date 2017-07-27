@@ -11,10 +11,12 @@ This role requires Ansible 2.0 or higher, and platform requirements are listed i
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
 ```
-docker_mysql_state: "started"
 docker_mysql_version: "5.7"
 docker_mysql_container_name: "mysql"
 docker_mysql_container_volume_base: "/opt/docker"
+docker_mysql_pull: "yes"
+docker_mysql_state: "started"
+docker_mysql_restart_policy: "always"
 docker_mysql_config_template: "config.tpl"
 docker_mysql_port: "3306"
 docker_mysql_root_password: "welcome"

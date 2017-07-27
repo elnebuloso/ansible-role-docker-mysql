@@ -15,7 +15,9 @@
   docker_container:
     name: "{{docker_mysql_container_name}}"
     image: "mysql:{{docker_mysql_version}}"
+    pull: "{{docker_mysql_pull}}"
     state: "{{docker_mysql_state}}"
+    restart_policy: "{{docker_mysql_restart_policy}}"
     volumes:
       - "{{docker_mysql_volume}}/data:/var/lib/mysql"
       - "{{docker_mysql_volume}}/conf.d:/etc/mysql/conf.d"
