@@ -1,6 +1,6 @@
 # Ansible Role - MySQL Server for Docker
 
-[![Build Status](https://travis-ci.org/elnebuloso/ansible-role-docker-mysql.svg?branch=master)](https://travis-ci.org/elnebuloso/ansible-role-docker-mysql)
+![abandoned](https://img.shields.io/badge/project-abandoned-red)
 
 ## Requirements
 
